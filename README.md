@@ -1,87 +1,104 @@
-# LUXE STORE — Premium E-Commerce Experience
+# SimpleStore - Beginner-Friendly React E-Commerce App
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 
-**Luxe Store** is a high-performance, aesthetically curated e-commerce browsing experience built with React 19 and Tailwind CSS v4. It features a sophisticated "Earth-tone" design system, optimized data fetching, and a seamless shopping journey from discovery to checkout.
+SimpleStore is a clean and easy-to-understand e-commerce frontend built with React and Tailwind CSS. It is designed for students who are learning React basics such as components, state, props, context, routing, and simple form handling.
 
----
+## Features
 
-## ✨ Key Features
+- Product listing with category filter, price filter, sort, and search
+- Product details page with image selection
+- Cart management with quantity updates and totals
+- Wishlist management
+- Checkout form with simple client-side validation
+- Local persistence for cart and wishlist using localStorage
 
-### 🛍️ Product Exploration
-- **Luxe Catalogue**: A responsive grid layout (4 cols desktop) displaying premium products with high-quality imagery and localized pricing.
-- **Dynamic Search**: High-performance searching with **Debounce** optimization to ensure smooth re-renders while typing.
-- **Smart Category Navigation**: Primary navigation via aesthetic **Top Tabs** and a simplified Sidebar for a focused experience.
-- **Advanced Sorting**: Sort results by Price (Low/High), Rating (Highest), and **Newest Arrivals**.
+## Tech Stack
 
-### 💎 User Experience
-- **Interactive Details**: A beautiful product page featuring a **Swiper.js image gallery** with thumbnail navigation.
-- **Seamless State**: Global state management for both **Cart** and **Wishlist** using the React Context API.
-- **Premium Animations**: Fluid transitions and micro-interactions powered by **Framer Motion**.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewports.
+- React 19
+- React Router
+- Tailwind CSS v4
+- Vite
+- Axios
+- React Toastify
+- React Icons
 
-### 💳 Cart & Checkout
-- **Bag Management**: Add, remove, and update quantities with real-time total calculations.
-- **Secure Checkout**: Specialized order summary with Subtotal, Tax breakdown, and **Yup-validated** shipping/payment forms.
-
----
-
-## 🛠️ Technology Stack
-
-- **Core**: React 19 (Hooks, Context API, Suspense/Lazy)
-- **Bundler**: Vite 8 (HMR enabled)
-- **Styling**: Tailwind CSS v4 (Custom theme + Glassmorphism)
-- **Animations**: Framer Motion
-- **Form Handling**: React Hook Form + Yup
-- **Iconography**: React Icons (Feather / Lucide)
-- **Notifications**: React Toastify
-
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- npm (v9 or higher)
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/GLADIATOR-CODING/React-Project-2.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd React-Project-2
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+- Node.js 18+
+- npm 9+
 
----
+### Install and Run
 
-## 🏗️ Folder Structure
+```bash
+npm install
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Current Project Structure
 
 ```text
 src/
-├── components/   # Reusable UI (Navbar, ProductCard, Filters, etc.)
-├── context/      # Global state (Cart, Wishlist)
-├── hooks/        # Custom logic (useProducts, useDebounce, etc.)
-├── pages/        # Route components (Home, Products, Checkout)
-├── services/     # API integration (Axios)
-└── utils/        # Formatting and helper functions
+   features/
+      cart/
+         CartContext.jsx
+         CartPage.jsx
+         CheckoutPage.jsx
+      products/
+         components/
+            Filters.jsx
+            ProductCard.jsx
+            ProductGrid.jsx
+         hooks/
+            useProducts.js
+         HomePage.jsx
+         ProductDetailsPage.jsx
+         ProductsPage.jsx
+      wishlist/
+         WishlistContext.jsx
+         WishlistPage.jsx
+   layout/
+      Footer.jsx
+      Navbar.jsx
+   shared/
+      api.js
+      formatCurrency.js
+      useDebounce.js
+   App.jsx
+   index.css
+   main.jsx
 ```
 
----
+## Data and State Flow
 
-## ⚖️ License
-This project was developed for academic/portfolio purposes. Use it freely for education and inspiration.
+- Product data is fetched from DummyJSON in shared API helpers.
+- Product filtering and category logic live in the products feature hook.
+- Global app state is split by feature:
+   - Cart state in CartContext
+   - Wishlist state in WishlistContext
+- Cart and wishlist are saved to localStorage.
 
----
-*Created with ❤️*
+## Notes
+
+- This repository includes a local-only learning document named howitworks.md.
+- It is intentionally ignored through .gitignore and will not be committed.
+
+## License
+
+This project is for learning and academic use.
